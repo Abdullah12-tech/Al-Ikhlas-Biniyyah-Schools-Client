@@ -2,7 +2,6 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
 import DashboardLayout from "./layouts/DashboardLayout";
-import PublicLayout from "./layouts/PublicLayout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Students from "./pages/Students";
@@ -18,28 +17,6 @@ import Communication from "./pages/Communication";
 import Library from "./pages/Library";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
-import Home from "./pages/public/Home";
-import About from "./pages/public/About";
-import Management from "./pages/public/Management";
-import Academics from "./pages/public/Academics";
-import Admissions from "./pages/public/Admissions";
-import FeesPublic from "./pages/public/FeesPublic";
-import Facilities from "./pages/public/Facilities";
-import Curriculum from "./pages/public/Curriculum";
-import Activities from "./pages/public/Activities";
-import ResultsAchievements from "./pages/public/ResultsAchievements";
-import Gallery from "./pages/public/Gallery";
-import NewsEvents from "./pages/public/NewsEvents";
-import Testimonials from "./pages/public/Testimonials";
-import Alumni from "./pages/public/Alumni";
-import Policies from "./pages/public/Policies";
-import Faqs from "./pages/public/Faqs";
-import Contact from "./pages/public/Contact";
-import Visit from "./pages/public/Visit";
-import Application from "./pages/public/Application";
-import PortalLogin from "./pages/public/PortalLogin";
-import Careers from "./pages/public/Careers";
-import PrivacyTerms from "./pages/public/PrivacyTerms";
 
 const PrivateRoute = ({ children }) => {
   const { user } = useAuth();
@@ -50,185 +27,9 @@ const PrivateRoute = ({ children }) => {
 const App = () => {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <PublicLayout>
-            <Home />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/about"
-        element={
-          <PublicLayout>
-            <About />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/management"
-        element={
-          <PublicLayout>
-            <Management />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/academics"
-        element={
-          <PublicLayout>
-            <Academics />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/admissions"
-        element={
-          <PublicLayout>
-            <Admissions />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/fees"
-        element={
-          <PublicLayout>
-            <FeesPublic />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/facilities"
-        element={
-          <PublicLayout>
-            <Facilities />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/curriculum"
-        element={
-          <PublicLayout>
-            <Curriculum />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/activities"
-        element={
-          <PublicLayout>
-            <Activities />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/results"
-        element={
-          <PublicLayout>
-            <ResultsAchievements />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/gallery"
-        element={
-          <PublicLayout>
-            <Gallery />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/news"
-        element={
-          <PublicLayout>
-            <NewsEvents />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/testimonials"
-        element={
-          <PublicLayout>
-            <Testimonials />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/alumni"
-        element={
-          <PublicLayout>
-            <Alumni />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/policies"
-        element={
-          <PublicLayout>
-            <Policies />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/faqs"
-        element={
-          <PublicLayout>
-            <Faqs />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/contact"
-        element={
-          <PublicLayout>
-            <Contact />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/visit"
-        element={
-          <PublicLayout>
-            <Visit />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/application"
-        element={
-          <PublicLayout>
-            <Application />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/portal-login"
-        element={
-          <PublicLayout>
-            <PortalLogin />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/careers"
-        element={
-          <PublicLayout>
-            <Careers />
-          </PublicLayout>
-        }
-      />
-      <Route
-        path="/privacy"
-        element={
-          <PublicLayout>
-            <PrivacyTerms />
-          </PublicLayout>
-        }
-      />
       <Route path="/login" element={<Login />} />
       <Route
-        path="/app"
+        path="/"
         element={
           <PrivateRoute>
             <Dashboard />
@@ -236,7 +37,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/students"
+        path="/students"
         element={
           <PrivateRoute>
             <Students />
@@ -245,6 +46,7 @@ const App = () => {
       />
       <Route
         path="/app/students/:id"
+        path="/students/:id"
         element={
           <PrivateRoute>
             <StudentProfile />
@@ -252,7 +54,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/staff"
+        path="/staff"
         element={
           <PrivateRoute>
             <Staff />
@@ -260,7 +62,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/classes"
+        path="/classes"
         element={
           <PrivateRoute>
             <Classes />
@@ -268,7 +70,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/attendance"
+        path="/attendance"
         element={
           <PrivateRoute>
             <Attendance />
@@ -276,7 +78,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/exams"
+        path="/exams"
         element={
           <PrivateRoute>
             <Exams />
@@ -284,7 +86,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/fees"
+        path="/fees"
         element={
           <PrivateRoute>
             <Fees />
@@ -292,7 +94,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/parents"
+        path="/parents"
         element={
           <PrivateRoute>
             <ParentPortal />
@@ -300,7 +102,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/assignments"
+        path="/assignments"
         element={
           <PrivateRoute>
             <Assignments />
@@ -308,7 +110,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/communication"
+        path="/communication"
         element={
           <PrivateRoute>
             <Communication />
@@ -316,7 +118,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/library"
+        path="/library"
         element={
           <PrivateRoute>
             <Library />
@@ -324,7 +126,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/reports"
+        path="/reports"
         element={
           <PrivateRoute>
             <Reports />
@@ -332,7 +134,7 @@ const App = () => {
         }
       />
       <Route
-        path="/app/settings"
+        path="/settings"
         element={
           <PrivateRoute>
             <Settings />

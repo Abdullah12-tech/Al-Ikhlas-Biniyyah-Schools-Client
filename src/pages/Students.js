@@ -46,7 +46,7 @@ const Students = () => {
       label: "Action",
       render: (student) => (
         <div className="flex gap-2">
-          <Button size="sm" variant="secondary" onClick={() => navigate(`/app/students/${student.id}`)}>
+          <Button size="sm" variant="secondary" onClick={() => navigate(`/students/${student.id}`)}>
             View
           </Button>
           <Button size="sm" variant="ghost" onClick={() => setModal("edit")}>

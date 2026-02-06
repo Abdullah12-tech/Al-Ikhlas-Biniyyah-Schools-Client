@@ -3,19 +3,19 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const navItems = [
-  { path: "/app", label: "Dashboard" },
-  { path: "/app/students", label: "Students" },
-  { path: "/app/staff", label: "Staff" },
-  { path: "/app/classes", label: "Classes" },
-  { path: "/app/attendance", label: "Attendance" },
-  { path: "/app/exams", label: "Exams" },
-  { path: "/app/fees", label: "Fees" },
-  { path: "/app/parents", label: "Parent Portal" },
-  { path: "/app/assignments", label: "Assignments" },
-  { path: "/app/communication", label: "Communication" },
-  { path: "/app/library", label: "Library" },
-  { path: "/app/reports", label: "Reports" },
-  { path: "/app/settings", label: "Settings" }
+  { path: "/", label: "Dashboard" },
+  { path: "/students", label: "Students" },
+  { path: "/staff", label: "Staff" },
+  { path: "/classes", label: "Classes" },
+  { path: "/attendance", label: "Attendance" },
+  { path: "/exams", label: "Exams" },
+  { path: "/fees", label: "Fees" },
+  { path: "/parents", label: "Parent Portal" },
+  { path: "/assignments", label: "Assignments" },
+  { path: "/communication", label: "Communication" },
+  { path: "/library", label: "Library" },
+  { path: "/reports", label: "Reports" },
+  { path: "/settings", label: "Settings" }
 ];
 
 const DashboardLayout = ({ children }) => {

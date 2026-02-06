@@ -19,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await login(form);
-    navigate("/app");
+    navigate("/");
   };
 
   return (
