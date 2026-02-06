@@ -45,6 +45,7 @@ const App = () => {
         }
       />
       <Route
+        path="/app/students/:id"
         path="/students/:id"
         element={
           <PrivateRoute>
